@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe>
+    <infNFe versao="4.00" Id="NFe35250514200166000187550010000000131000000139">
+      <ide>
+        <cUF>26</cUF>
+        <nNF>1013</nNF>
+        <dhEmi>2025-05-02T10:30:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+      </ide>
+      <emit>
+        <CNPJ>33444555000166</CNPJ>
+        <xNome>Comercial Agreste SA</xNome>
+      </emit>
+      <total>
+        <ICMSTot>
+          <vNF>1340.00</vNF>
+        </ICMSTot>
+      </total>
+    </infNFe>
+  </NFe>
+</nfeProc>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe>
+    <infNFe versao="4.00" Id="NFe35250314200166000187550010000000091000000095">
+      <ide>
+        <cUF>26</cUF>
+        <nNF>1009</nNF>
+        <dhEmi>2025-03-28T10:30:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+      </ide>
+      <emit>
+        <CNPJ>14200166000187</CNPJ>
+        <xNome>Distribuidora Sertao Ltda</xNome>
+      </emit>
+      <total>
+        <ICMSTot>
+          <vNF>920.30</vNF>
+        </ICMSTot>
+      </total>
+    </infNFe>
+  </NFe>
+</nfeProc>

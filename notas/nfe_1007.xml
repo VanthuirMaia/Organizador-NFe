@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe>
+    <infNFe versao="4.00" Id="NFe35250314200166000187550010000000071000000073">
+      <ide>
+        <cUF>26</cUF>
+        <nNF>1007</nNF>
+        <dhEmi>2025-03-12T10:30:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+      </ide>
+      <emit>
+        <CNPJ>55667788000199</CNPJ>
+        <xNome>Mercado Caruaru Ltda</xNome>
+      </emit>
+      <total>
+        <ICMSTot>
+          <vNF>780.45</vNF>
+        </ICMSTot>
+      </total>
+    </infNFe>
+  </NFe>
+</nfeProc>

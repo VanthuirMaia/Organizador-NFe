@@ -1,36 +1,59 @@
-# Organizador NF-e
+# Organizador de NF-e
 
-Ferramenta para organizar notas fiscais eletrônicas (NF-e) brasileiras a partir de arquivos XML.
+Ferramenta que lê XMLs de notas fiscais eletrônicas (NF-e), extrai os dados principais e organiza tudo em um relatório Excel. Tem interface web (Streamlit) para uso por pessoas não técnicas e também funciona via terminal.
 
 ## O que faz
 
-- Lê arquivos XML de NF-e (padrão SEFAZ)
-- Armazena as notas em banco SQLite local
-- Detecta notas duplicadas pela chave de acesso
-- (planejado) Exporta para CSV / Excel
-- (planejado) Interface web para visualização
+- Lê arquivos XML de NF-e (upload na interface ou pasta local)
+- Extrai chave de acesso, número, data, CNPJ e nome do emitente, e valor total
+- Guarda tudo em um banco SQLite, sem duplicar notas já processadas
+- Gera um relatório Excel com duas abas: todas as notas e o total por mês
 
-## Requisitos
+## Como funciona por dentro
 
-- Python 3.11+
-- Dependências listadas em `requirements.txt`
+- **Banco como fonte de verdade.** Os dados ficam em SQLite. O Excel é só uma saída gerada a partir do banco, descartável.
+- **Idempotente.** A chave de acesso da NF-e (44 dígitos) é a chave primária. Reprocessar os mesmos arquivos não duplica nada: usa INSERT OR IGNORE, então rodar uma vez ou dez vezes dá o mesmo resultado.
+- **Tratamento de erro observável.** Um XML corrompido no meio do lote não derruba os outros. O arquivo problemático é reportado com o motivo, e o processamento continua.
+- **Valor em centavos.** Valores monetários são guardados como inteiro (centavos), evitando erro de arredondamento de float. A conversão para reais acontece só na exibição.
 
-## Instalação
+## Stack
 
-```powershell
+Python, Streamlit, pandas, xmltodict, SQLite, openpyxl
+
+## Como rodar
+
+Clone o repositório:
+
+\```bash
+git clone https://github.com/VanthuirMaia/Organizador-NFe
+cd organizador-nfe
+\```
+
+Crie o ambiente e instale as dependências:
+
+\```bash
 python -m venv .venv
-.venv\Scripts\Activate.ps1
+.venv\Scripts\activate # Windows
+
+# source .venv/bin/activate # Linux/Mac
+
 pip install -r requirements.txt
-```
+\```
 
-## Uso
+Rode a interface web:
 
-```powershell
-python organizador.py
-```
+\```bash
+streamlit run app_streamlit.py
+\```
 
-## Tecnologias
+Ou processe via terminal, colocando os XMLs na pasta `notas/`:
 
-- `sqlite3` (stdlib) — banco de dados local
-- `xml.etree.ElementTree` (stdlib) — parser NF-e
-- Flask — interface web (em desenvolvimento)
+\```python
+from db import processa_pasta, exporta_excel
+processa_pasta()
+exporta_excel()
+\```
+
+## Observação
+
+Os XMLs incluídos na pasta `notas/` são fictícios, gerados apenas para teste e demonstração.
