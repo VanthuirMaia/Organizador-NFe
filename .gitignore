@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+uploads/
+organizadas/
+notas_processadas.json
+.env
+dist/
+build/
+*.egg-info/

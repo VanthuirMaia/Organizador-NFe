@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe>
+    <infNFe versao="4.00" Id="NFe35240114200166000187550010000000021000000028">
+      <ide>
+        <cUF>26</cUF>
+        <nNF>1002</nNF>
+        <dhEmi>2025-01-28T14:12:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+      </ide>
+      <emit>
+        <CNPJ>09876543000122</CNPJ>
+        <xNome>Atacado Garanhuns ME</xNome>
+      </emit>
+      <total>
+        <ICMSTot>
+          <vNF>876.00</vNF>
+        </ICMSTot>
+      </total>
+    </infNFe>
+  </NFe>
+</nfeProc>
